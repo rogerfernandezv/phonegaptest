@@ -35,7 +35,12 @@
 
             function takePhoto()
             {
-                navigator.camera.getPicture(onSucess, onFail, {quality:50,destinationType: Camera.DestinationType.FILE_URI});
+                navigator.camera.getPicture(onSucess, onFail, 
+                    {
+                        quality:50,
+                        destinationType: Camera.DestinationType.FILE_URI
+                    }
+                );
             }
 
             function onSucess(imageURI)
