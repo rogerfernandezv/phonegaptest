@@ -35,18 +35,14 @@
 
             function takePhoto()
             {
-                navigator.camera.getPicture(onSucess, onFail, 
-                    {
-                        quality:50,
-                        destinationType: Camera.DestinationType.FILE_URI
-                    }
-                );
+                navigator.camera.getPicture(onSucess, onFail);
             }
 
-            function onSucess(imageURI)
+            function onSucess()
             {
-                var image = document.getElementById('myImage');
-                image.src = imageURI;
+                //var image = document.getElementById('myImage');
+                //image.src = imageURI;
+                alert("Sucesso na camera");
             }
 
             function onFail(message)
