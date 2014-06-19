@@ -22,35 +22,6 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
-        <script>
-            window.onload=function()
-            {
-                document.addEventListener("deviceready", onDeviceReady, false);
-            }
-
-            function onDeviceReady()
-            {
-                document.getElementById('btnPhoto').addEventListener('click', takePhoto, false);
-            }
-
-            function takePhoto()
-            {
-                navigator.camera.getPicture(onSucess, onFail);
-            }
-
-            function onSucess()
-            {
-                //var image = document.getElementById('myImage');
-                //image.src = imageURI;
-                alert("Sucesso na camera");
-            }
-
-            function onFail(message)
-            {
-                alert('Failed because: '+ message);
-            }
-
-        </script>
     </head>
     <body>
         <div class="app">
@@ -61,7 +32,8 @@
             </div>
             <img src="" id="myImage">
             <form>
-                <input type="button" id="btnPhoto" value="tirar foto" name="photo">
+                <input type="button" id="btnPhoto" value="tirar foto" name="photo"><br>
+                <input type="button" id="btnHello" value="Hey" name="hello">
             </form>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>

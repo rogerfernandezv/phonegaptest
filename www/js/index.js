@@ -31,7 +31,33 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        document.getElementById('btnPhoto').addEventListener('click', takePhoto, false);
+        document.getElementById('btnHello').addEventListener('click', hellofunction, false);
     },
+
+    function hellofunction()
+    {
+        alert('Teste de hello');
+    }
+
+    //Camera teste
+    function takePhoto()
+    {
+        navigator.camera.getPicture(onSucess, onFail);
+    }
+
+    function onSucess()
+    {
+        //var image = document.getElementById('myImage');
+        //image.src = imageURI;
+        alert("Sucesso na camera");
+    }
+
+    function onFail(message)
+    {
+        alert('Failed because: '+ message);
+    }
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
