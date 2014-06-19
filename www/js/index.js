@@ -37,20 +37,23 @@ var app = {
 
     function hellofunction()
     {
-        alert('Teste de hello');
+        alert("Teste de hello");
     }
 
     //Camera teste
     function takePhoto()
     {
-        navigator.camera.getPicture(onSucess, onFail);
+        navigator.camera.getPicture(onSucess, onFail, 
+        {
+            quality: 50,
+            destinationType: Camera.DestinationType.FILE_URI 
+        });
     }
 
-    function onSucess()
+    function onSucess(imageURI)
     {
-        //var image = document.getElementById('myImage');
-        //image.src = imageURI;
-        alert("Sucesso na camera");
+        var image = document.getElementById('myImage');
+        image.src = imageURI;
     }
 
     function onFail(message)
