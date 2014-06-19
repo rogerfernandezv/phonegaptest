@@ -46,7 +46,8 @@ var app = {
         navigator.camera.getPicture(onSucess, onFail, 
         {
             quality: 50,
-            destinationType: Camera.DestinationType.FILE_URI 
+            destinationType: Camera.DestinationType.FILE_URI,
+            saveToPhotoAlbum: true 
         });
     }
 
